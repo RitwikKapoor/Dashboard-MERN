@@ -2,7 +2,7 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import { useMemo } from "react";
 import {
-  BrowserRouter,
+  HashRouter,
   Routes,
   Route,
   Navigate,
@@ -26,7 +26,7 @@ function App() {
   const mode = useSelector((state) => state.global.mode);
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
   return (
-    <BrowserRouter>
+    <HashRouter>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Routes>
@@ -46,7 +46,7 @@ function App() {
           </Route>
         </Routes>
       </ThemeProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
